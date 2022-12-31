@@ -1,22 +1,20 @@
 import React from "react";
+import useCurrency from "../hooks/useCurrency";
 
 const ReceiptItem = ({drink}) => {
-    let extras = rink.extras.map((x) => <li>{x}</li>)
+    let extras = drink.extras.map((x) => <li>{x}</li>)
     let price = useCurrency(drink.cost)
     return (
         <div className = 'receipt-item'>
            <div>
-            <p>{drink.size} {drink.base}</p>
+             <p>{drink.size} {drink.base}</p>
+             </div>
+            <div>
+                <ul>
+                 {extras} 
+                 </ul>
+            <h3>{price}</h3>
             </div>
-            <h3>price</h3>
-            <ul>
-                <li>thing</li>
-                <li>thing</li>
-                <li>thing</li>
-                <li>thing</li>
-                <li>thing</li>
-                <li>thing</li>
-            </ul>
 
         </div>
     )

@@ -6,12 +6,13 @@ const useCurrency = (num) => {
         style: 'currency',
         currency: 'USD'
     })
+   
     useEffect(() => {
-        let newPrice = formatter.
-    })
+        let newPrice = formatter.format(num)
+        setPrice(newPrice)
+    }, [num])
 
-return price
-
+    return price
 };
 
 export default useCurrency;

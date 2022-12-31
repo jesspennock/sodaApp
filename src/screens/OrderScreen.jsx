@@ -16,9 +16,7 @@ const OrderScreen = () => {
 
     console.log(state.cart)
 
-    useEffect(() => {
-        getData()
-    }, [])
+  
 
     const handleSizeChange = (e) => {
         setSize(e.target.value)
@@ -27,6 +25,7 @@ const OrderScreen = () => {
     const addToCart = (e)=> {
         e.preventDefault()
         let cost = 0
+        console.log(size)
         if(size  === "Small") {
             let newTotal = 3.50
             newTotal += (userExtras.length * .1)
@@ -92,6 +91,10 @@ const OrderScreen = () => {
             </div>
         )
     })
+
+    useEffect(() => {
+        getData()
+    }, [])
     
     return (
         <div className = "main-page">
@@ -100,16 +103,16 @@ const OrderScreen = () => {
                 <h3>Select Size</h3>
                 <div className="size-container">
                     <label htmlFor="small">Small</label>
-                    <input type="radio" id ="small" name="size"value="small" onChange={handleSizeChange}/>
+                    <input type="radio" id ="small" name="size"value="Small" onChange={handleSizeChange}/>
                     <label htmlFor="medium">Medium</label>
-                    <input type="radio"id = "medium" name="size" value="medium" onChange={handleSizeChange}/>
+                    <input type="radio"id = "medium" name="size" value="Medium" onChange={handleSizeChange}/>
                     <label htmlFor="large">Large</label>
-                    <input type="radio" id = "large" name="size" value="large" onChange={handleSizeChange}/>
+                    <input type="radio" id = "large" name="size" value="Large" onChange={handleSizeChange}/>
                     <label htmlFor="x-large">X-Large</label>
-                    <input type="radio" id = "x-large" name="size"value="x-large" onChange={handleSizeChange}/>
+                    <input type="radio" id = "x-large" name="size"value="X-Large" onChange={handleSizeChange}/>
                 </div>
                 <select name ="" id="" ref={baseRef}>
-                    <option value =""> Select a Base</option>
+                    <option value ="">Select a Base</option>
                     {baseOptions}
                 </select>
                 <h3>Extras</h3>

@@ -210,6 +210,7 @@ input[type=radio] {
 }
 .main-page {
   padding-bottom: 50px;
+  width: 100vw;
 }
 
 .extras-container {
@@ -265,4 +266,27 @@ input[type=radio] {
   flex-direction: column;
   align-items: center;
   gap: 8px;
+}
+
+.receipt-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 300px;
+  height: fit-content;
+  border-bottom: 1px dashed white;
+}
+
+.receipt-item div{
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+}
+li {
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

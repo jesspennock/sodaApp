@@ -10,11 +10,12 @@ const CartCard = ({drink}) => {
             <div className="cart-info">
                 <h2>{drink.name}</h2>
                 <h4>{drink.base}</h4>
+                <h4>{drink.size}</h4>
                 <ul>
                     {drink.extras.map((extra) => <li>{extra}</li>)}
                 </ul>
             </div>
-            <h4 className="colored-text">${drink.cost}</h4>
+            <h4 className="colored-text">{price}</h4>
         </div>
     )
 }
